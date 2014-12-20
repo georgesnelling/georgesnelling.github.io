@@ -17,7 +17,11 @@ module.exports = function(grunt) {
             {
               match: 'includeHead',
               replacement:  '<%= grunt.file.read("src/_head.html") %>'
-            }
+            },
+            {
+              match: 'includeFoot',
+              replacement:  '<%= grunt.file.read("src/_foot.html") %>'
+            },
           ]
         },
         files: [
