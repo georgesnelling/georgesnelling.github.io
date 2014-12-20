@@ -1,0 +1,27 @@
+{
+  "name": "gshomepage",
+  "version": "1.0.0",
+  "description": "George Snelling Home Page",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/georgesnelling/georgesnelling.github.io"
+  },
+  "keywords": [
+    "George",
+    "Snelling"
+  ],
+  "author": "George Snelling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgesnelling/georgesnelling.github.io/issues"
+  },
+  "homepage": "https://github.com/georgesnelling/georgesnelling.github.io",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-replace": "^0.8.0"
+  }
+}
