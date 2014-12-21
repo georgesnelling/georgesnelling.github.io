@@ -12,20 +12,21 @@ module.exports = function(grunt) {
       dist: {
         options: {
           force: true,
-          noProcess: 'src/_*',
+          verbose: true,
           patterns: [
             {
               match: 'includeHead',
-              replacement:  '<%= grunt.file.read("src/_head.html") %>'
+              replacement:  '<%= grunt.file.read("src/include/head.html") %>'
             },
             {
               match: 'includeFoot',
-              replacement:  '<%= grunt.file.read("src/_foot.html") %>'
+              replacement:  '<%= grunt.file.read("src/include/foot.html") %>'
             },
           ]
         },
         files: [
-          {expand: true, flatten: true, src: ['src/*.html'], dest: '.'}
+          {expand: true, flatten: true, src: ['src/html/*.html'], dest: '.'},
+          {expand: true, flatten: true, src: ['src/html/lies/*.html'], dest: './lies'},
         ]
       }
     }
