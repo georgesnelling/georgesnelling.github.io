@@ -1,5 +1,5 @@
 //
-// Inject the shared header into all html files
+// Build the site
 //
 // Usage:  grunt
 //
@@ -7,33 +7,25 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
-    replace: {
-      dist: {
-        options: {
-          force: true,
-          verbose: true,
-          patterns: [
-            {
-              match: 'includeHead',
-              replacement:  '<%= grunt.file.read("src/include/head.html") %>'
-            },
-            {
-              match: 'includeFoot',
-              replacement:  '<%= grunt.file.read("src/include/foot.html") %>'
-            },
-          ]
-        },
-        files: [
-          {expand: true, flatten: true, src: ['src/html/*.html'], dest: '.'},
-          {expand: true, flatten: true, src: ['src/html/lies/*.html'], dest: './lies'},
-        ]
-      }
-    }
+
+    assemble: {
+      options: {
+        layout: ['src/templates/page.hbs'],
+      },
+      files: {
+        expand: true,
+        cwd: 'src/html',
+        src: '**/*.html',
+        dest: './',
+      },
+    },
+
   })
 
-  grunt.loadNpmTasks('grunt-replace')
+  grunt.loadNpmTasks('assemble')
 
   // Default task(s).
-  grunt.registerTask('default', ['replace'])
+  grunt.registerTask('default', ['assemble'])
 }
