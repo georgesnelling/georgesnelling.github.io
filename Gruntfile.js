@@ -1,22 +1,26 @@
 //
-// Build the site
+// Build the static site from src
+//
+// Assemble the html page in /src/pages using handlebar templates
+// in /src/templates.  Put the built results in the project root
+// for serving by github pages.  Src is public.
 //
 // Usage:  grunt
 //
+
 module.exports = function(grunt) {
 
-  // Project configuration.
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
 
     assemble: {
       options: {
-        layout: ['src/templates/page.hbs'],
+        layout: 'src/templates/page.hbs',
       },
       files: {
         expand: true,
-        cwd: 'src/html',
+        cwd: 'src/pages',
         src: '**/*.html',
         dest: './',
       },
@@ -24,8 +28,8 @@ module.exports = function(grunt) {
 
   })
 
+  // http://assemble.io
   grunt.loadNpmTasks('assemble')
 
-  // Default task(s).
   grunt.registerTask('default', ['assemble'])
 }
