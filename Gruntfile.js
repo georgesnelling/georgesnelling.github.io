@@ -29,7 +29,7 @@ module.exports = function(grunt) {
   })
 
   // http://assemble.io
-  grunt.loadNpmTasks('assemble')
+  grunt.loadNpmTasks('grunt-assemble')
 
   grunt.registerTask('default', ['assemble'])
 }

@@ -22,6 +22,7 @@
   "homepage": "https://github.com/georgesnelling/georgesnelling.github.io",
   "devDependencies": {
     "assemble": "*",
-    "grunt": "*"
+    "grunt": "*",
+    "grunt-assemble": "^0.6.3"
   }
 }
