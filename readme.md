@@ -8,18 +8,25 @@ ssh-add <gskey16> or any other valid key.
 
 
 cd
-cd src/gs.com
-git pull
+cd src/
 
-If this works you have a valid key to connect to git hub.  If not, you need to figure out the key to publish on github.  If you can't publish on github, that's OK.  The following steps will still work.  You just need to publish them some place else.  
+git clone git@github.com:georgesnelling/georgesnelling.github.io gs.com
 
+If this works you have a valid key to connect to git hub.  If not, you need to figure out the key to pull and push on github.  If you can't publish on github, that's OK.  The following steps will still work.  You just need to publish them some place else.  
+Install gruntjs, the templating tool that generates the site's header. Instructions here:  
+
+https://gruntjs.com/getting-started
 
 To edit the site, go to !gs.com/src and edit the raw html files using your favorite text editor. If you mistakenly edit the files outside the ssrc sub-directory you will be sad. Then
 
-cd ~/gs.com
+cd ~/src/gs.com
+
 grunt  -- this will process your source files and provide templating
+
 git add .
+
 git commit -m "what you changed"
+
 git push
 
 if all goes well your new site will be available on georgesnelling.github.io
